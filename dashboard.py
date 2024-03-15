@@ -77,7 +77,7 @@ def main():
 
     if any(st.session_state.selected_components[key] != st.session_state.last_selected_components.get(key) for key in st.session_state.selected_components.keys()):
             st.session_state.last_selected_components = st.session_state.selected_components
-            st.rerun()
+            st.experimental_rerun()()
 
 
     float_init()
@@ -100,12 +100,12 @@ def main():
             with b1:
                 if st.button('Cancel', key='cancel'):
                     st.session_state.show = (False, None)
-                    st.rerun()
+                    st.experimental_rerun()()
             with b2:
                 if st.button("Save", key="save"):
                     st.session_state.new_components[comp] = new_text
                     st.session_state.show = (False, None)
-                    st.rerun()
+                    st.experimental_rerun()()
         else:
             st.header("Add text")
             name_input = st.text_input("Enter name of component", key="name")
@@ -116,34 +116,34 @@ def main():
             with b1:
                 if st.button('Cancel', key='cancel'):
                     st.session_state.show = (False, None)
-                    st.rerun()
+                    st.experimental_rerun()()
             with b2:
                 if st.button("Send", key="send"):
                     st.session_state.new_components[component + name_input] = text_input
                     st.session_state.show = (False, None)
-                    st.rerun()
+                    st.experimental_rerun()()
 
     col1, col2, col3, col4 = st.sidebar.columns([1,1,1,1])  
 
     with col1:
         if st.button("H", use_container_width=True):
             st.session_state.show = (True, 'H_')
-            st.rerun()
+            st.experimental_rerun()()
 
     with col2:
         if st.button("S", use_container_width=True):
             st.session_state.show = (True, 'S_')
-            st.rerun()
+            st.experimental_rerun()()
 
     with col3:
         if st.button("P", use_container_width=True):
             st.session_state.show = (True, 'P_')
-            st.rerun()
+            st.experimental_rerun()()
 
     with col4:
         if st.button("🔧", use_container_width=True):
             st.session_state.show = (True, 'edit')
-            st.rerun()
+            st.experimental_rerun()()
 
     st.sidebar.download_button('Export layout', export_layout(st.session_state.last_session_layout), file_name='layout.json')
     
@@ -194,7 +194,7 @@ def main():
         st.session_state.session_layout = {'files': files, 'selected_components': st.session_state.selected_components, 'rendered_components': rendered_components, 'custom_components': st.session_state.new_components, 'layout': st.session_state.layout}
         if any(st.session_state.session_layout[key] != st.session_state.last_session_layout.get(key) for key in st.session_state.session_layout.keys()):
             st.session_state.last_session_layout = st.session_state.session_layout
-            st.rerun()
+            st.experimental_rerun()()
 
 if __name__ == "__main__":
     st.set_page_config(
