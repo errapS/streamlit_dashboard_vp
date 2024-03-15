@@ -11,6 +11,7 @@ streamlit = "^1.1.0"
 streamlit-elements = "==0.1.*"
 streamlit-modal = "^0.1.2"
 streamlit-float = "^0.3.2"
+altair= "4.0"
 
 [build-system]
 requires = ["poetry-core"]
