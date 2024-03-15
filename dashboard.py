@@ -95,33 +95,33 @@ def main():
             if comp:
                 new_text = st.text_area("Enter text", key="text", value=st.session_state.new_components[comp])
 
-            b1, _, b2= st.columns([0.1,0.81,0.09])
+            # b1, _, b2= st.columns([0.1,0.81,0.09])
 
-            with b1:
-                if st.button('Cancel', key='cancel'):
-                    st.session_state.show = (False, None)
-                    st.experimental_rerun()()
-            with b2:
-                if st.button("Save", key="save"):
-                    st.session_state.new_components[comp] = new_text
-                    st.session_state.show = (False, None)
-                    st.experimental_rerun()()
+            # with b1:
+            if st.button('Cancel', key='cancel'):
+                st.session_state.show = (False, None)
+                st.experimental_rerun()()
+            # with b2:
+            if st.button("Save", key="save"):
+                st.session_state.new_components[comp] = new_text
+                st.session_state.show = (False, None)
+                st.experimental_rerun()()
         else:
             st.header("Add text")
             name_input = st.text_input("Enter name of component", key="name")
             text_input = st.text_area("Enter text", key="text")
 
-            b1, _, b2= st.columns([0.1,0.81,0.09])
+            # b1, _, b2= st.columns([0.1,0.81,0.09])
 
-            with b1:
-                if st.button('Cancel', key='cancel'):
-                    st.session_state.show = (False, None)
-                    st.experimental_rerun()()
-            with b2:
-                if st.button("Send", key="send"):
-                    st.session_state.new_components[component + name_input] = text_input
-                    st.session_state.show = (False, None)
-                    st.experimental_rerun()()
+            # with b1:
+            if st.button('Cancel', key='cancel'):
+                st.session_state.show = (False, None)
+                st.experimental_rerun()()
+            # with b2:
+            if st.button("Send", key="send"):
+                st.session_state.new_components[component + name_input] = text_input
+                st.session_state.show = (False, None)
+                st.experimental_rerun()()
 
     col1, col2, col3, col4 = st.sidebar.columns([1,1,1,1])  
 
