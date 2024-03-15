@@ -126,22 +126,22 @@ def main():
     col1, col2, col3, col4 = st.sidebar.columns([1,1,1,1])  
 
     with col1:
-        if st.button("H", use_container_width=True):
+        if st.button("H"):
             st.session_state.show = (True, 'H_')
             st.experimental_rerun()()
 
     with col2:
-        if st.button("S", use_container_width=True):
+        if st.button("S"):
             st.session_state.show = (True, 'S_')
             st.experimental_rerun()()
 
     with col3:
-        if st.button("P", use_container_width=True):
+        if st.button("P":
             st.session_state.show = (True, 'P_')
             st.experimental_rerun()()
 
     with col4:
-        if st.button("🔧", use_container_width=True):
+        if st.button("🔧"):
             st.session_state.show = (True, 'edit')
             st.experimental_rerun()()
 
