@@ -136,7 +136,7 @@ def main():
             st.experimental_rerun()()
 
     with col3:
-        if st.button("P":
+        if st.button("P"):
             st.session_state.show = (True, 'P_')
             st.experimental_rerun()()
 
